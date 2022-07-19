@@ -2,6 +2,7 @@ package de.zeus.covid19.http;
 
 import de.zeus.covid19.api.country.CountryResponse;
 import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
+import de.zeus.covid19.api.country.history.deaths.DeathResponse;
 import de.zeus.covid19.api.country.history.incidence.IncidenceResponse;
 
 public class CountryData {
@@ -9,6 +10,7 @@ public class CountryData {
     private CountryResponse response;
     private HistoryCasesResponse caseHistory;
     private IncidenceResponse incidenceHistory;
+    private DeathResponse deathResponse;
 
     private final String country;
 
@@ -37,6 +39,13 @@ public class CountryData {
         return incidenceHistory;
     }
 
+    public DeathResponse getDeathsHistory() {
+        if(deathResponse == null) {
+            return (deathResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, DeathResponse.class));
+        }
+        return deathResponse;
+    }
+
     public String getCountry() {
         return country;
     }
@@ -45,5 +54,6 @@ public class CountryData {
         this.response = null;
         this.caseHistory = null;
         this.incidenceHistory = null;
+        this.deathResponse = null;
     }
 }
