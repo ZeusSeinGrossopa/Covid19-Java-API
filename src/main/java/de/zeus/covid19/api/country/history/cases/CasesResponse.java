@@ -1,4 +1,4 @@
-package de.zeus.covid19.api.country.history;
+package de.zeus.covid19.api.country.history.cases;
 
 import com.google.gson.annotations.SerializedName;
 

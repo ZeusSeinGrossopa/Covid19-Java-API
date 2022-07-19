@@ -1,8 +1,8 @@
 package de.zeus.covid19.http;
 
 import de.zeus.covid19.api.country.CountryResponse;
-import de.zeus.covid19.api.country.history.HistoryCasesResponse;
-import de.zeus.covid19.api.country.history.IncidenceResponse;
+import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
+import de.zeus.covid19.api.country.history.incidence.IncidenceResponse;
 
 public class CountryData {
 

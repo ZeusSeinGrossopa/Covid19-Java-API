@@ -1,12 +1,12 @@
-package de.zeus.covid19.api.country.history;
+package de.zeus.covid19.api.country.history.cases;
 
 import com.google.gson.annotations.SerializedName;
 import de.zeus.covid19.api.MetaResponse;
 
-public class IncidenceResponse {
+public class HistoryCasesResponse {
 
     @SerializedName("data")
-    public HistoryIncidenceResponse[] incidences;
+    public CasesResponse[] cases;
 
     @SerializedName("meta")
     public MetaResponse meta;
