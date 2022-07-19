@@ -4,6 +4,7 @@ import de.zeus.covid19.api.country.CountryResponse;
 import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
 import de.zeus.covid19.api.country.history.deaths.DeathResponse;
 import de.zeus.covid19.api.country.history.incidence.IncidenceResponse;
+import de.zeus.covid19.api.country.history.recovered.RecoveredHistory;
 
 public class CountryData {
 
@@ -11,6 +12,7 @@ public class CountryData {
     private HistoryCasesResponse caseHistory;
     private IncidenceResponse incidenceHistory;
     private DeathResponse deathResponse;
+    private RecoveredHistory recoveredHistory;
 
     private final String country;
 
@@ -46,6 +48,14 @@ public class CountryData {
         return deathResponse;
     }
 
+    public RecoveredHistory getRecoveredHistory() {
+        if(recoveredHistory == null) {
+            return (recoveredHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, RecoveredHistory.class));
+        }
+        return recoveredHistory;
+    }
+
+
     public String getCountry() {
         return country;
     }
@@ -55,5 +65,6 @@ public class CountryData {
         this.caseHistory = null;
         this.incidenceHistory = null;
         this.deathResponse = null;
+        this.recoveredHistory = null;
     }
 }
