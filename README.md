@@ -1,6 +1,6 @@
 # Covid19-Java-Api 
 
-The Covid19-API is a useful tool for getting a overview about the covid19 cases 
+The Covid19-API is a useful tool for getting an overview about the covid19 cases 
 
 This API is based on the [COVID-19 API](https://corona-zahlen.org)
 
