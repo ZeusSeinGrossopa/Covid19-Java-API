@@ -3,8 +3,6 @@ package de.zeus.covid19.http;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
-import de.zeus.covid19.api.country.CountryResponse;
-import de.zeus.covid19.api.country.history.CountryHistoryCasesResponse;
 import de.zeus.covid19.http.exceptions.RequestException;
 
 import java.io.*;
@@ -14,22 +12,16 @@ import java.nio.charset.StandardCharsets;
 
 public class Covid19API {
 
-    private static final String COVID_19_API_URL = "https://api.corona-zahlen.org/";
+    public static final String COVID_19_API_URL = "https://api.corona-zahlen.org/";
     private static final Gson gson = new Gson();
 
-    public static CountryResponse getCountryResponse(String country) throws RequestException {
-        try {
-            return gson.fromJson(getJson(COVID_19_API_URL + country), CountryResponse.class);
-        } catch(JsonSyntaxException e) {
-            throw new JsonParseException("Could not parse JSON information.", e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static CountryData getCountry(String country) {
+        return new CountryData(country);
     }
 
-    public static CountryHistoryCasesResponse getCountryHistoryCasesResponse(String country) throws RequestException {
+    public static <T> T getObject(String url, Class<T> clazz) throws RequestException {
         try {
-            return gson.fromJson(getJson(COVID_19_API_URL + country + "/history/cases"), CountryHistoryCasesResponse.class);
+            return gson.fromJson(getJson(url), clazz);
         } catch(JsonSyntaxException e) {
             throw new JsonParseException("Could not parse JSON information.", e);
         } catch (IOException e) {
