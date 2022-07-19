@@ -31,4 +31,9 @@ public class CountryData {
     public String getCountry() {
         return country;
     }
+
+    public final void reset() {
+        this.response = null;
+        this.history = null;
+    }
 }
