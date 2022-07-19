@@ -2,11 +2,13 @@ package de.zeus.covid19.http;
 
 import de.zeus.covid19.api.country.CountryResponse;
 import de.zeus.covid19.api.country.history.HistoryCasesResponse;
+import de.zeus.covid19.api.country.history.IncidenceResponse;
 
 public class CountryData {
 
     private CountryResponse response;
-    private HistoryCasesResponse history;
+    private HistoryCasesResponse caseHistory;
+    private IncidenceResponse incidenceHistory;
 
     private final String country;
 
@@ -22,10 +24,17 @@ public class CountryData {
     }
 
     public HistoryCasesResponse getCasesHistory() {
-        if(history == null) {
-            return (history = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, HistoryCasesResponse.class));
+        if(caseHistory == null) {
+            return (caseHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, HistoryCasesResponse.class));
         }
-        return history;
+        return caseHistory;
+    }
+
+    public IncidenceResponse getIncidenceHistory() {
+        if(incidenceHistory == null) {
+            return (incidenceHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, IncidenceResponse.class));
+        }
+        return incidenceHistory;
     }
 
     public String getCountry() {
@@ -34,6 +43,7 @@ public class CountryData {
 
     public final void reset() {
         this.response = null;
-        this.history = null;
+        this.caseHistory = null;
+        this.incidenceHistory = null;
     }
 }
