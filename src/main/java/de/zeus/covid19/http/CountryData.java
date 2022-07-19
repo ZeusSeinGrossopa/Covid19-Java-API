@@ -29,28 +29,28 @@ public class CountryData {
 
     public HistoryCasesResponse getCasesHistory() {
         if(caseHistory == null) {
-            return (caseHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, HistoryCasesResponse.class));
+            return (caseHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/cases/", HistoryCasesResponse.class));
         }
         return caseHistory;
     }
 
     public IncidenceResponse getIncidenceHistory() {
         if(incidenceHistory == null) {
-            return (incidenceHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, IncidenceResponse.class));
+            return (incidenceHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/incidence/", IncidenceResponse.class));
         }
         return incidenceHistory;
     }
 
     public DeathResponse getDeathsHistory() {
         if(deathResponse == null) {
-            return (deathResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, DeathResponse.class));
+            return (deathResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/deaths/", DeathResponse.class));
         }
         return deathResponse;
     }
 
     public RecoveredHistory getRecoveredHistory() {
         if(recoveredHistory == null) {
-            return (recoveredHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, RecoveredHistory.class));
+            return (recoveredHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredHistory.class));
         }
         return recoveredHistory;
     }
