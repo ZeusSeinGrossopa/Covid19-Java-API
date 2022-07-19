@@ -1,12 +1,12 @@
 package de.zeus.covid19.http;
 
 import de.zeus.covid19.api.country.CountryResponse;
-import de.zeus.covid19.api.country.history.CountryHistoryCasesResponse;
+import de.zeus.covid19.api.country.history.HistoryCasesResponse;
 
 public class CountryData {
 
     private CountryResponse response;
-    private CountryHistoryCasesResponse history;
+    private HistoryCasesResponse history;
 
     private final String country;
 
@@ -21,9 +21,9 @@ public class CountryData {
         return response;
     }
 
-    public CountryHistoryCasesResponse getHistory() {
+    public HistoryCasesResponse getCasesHistory() {
         if(history == null) {
-            return (history = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, CountryHistoryCasesResponse.class));
+            return (history = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, HistoryCasesResponse.class));
         }
         return history;
     }
