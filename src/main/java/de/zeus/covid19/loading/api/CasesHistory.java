@@ -5,6 +5,7 @@ import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
 import de.zeus.covid19.loading.CountryData;
 import de.zeus.covid19.loading.Covid19API;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class CasesHistory {
@@ -34,7 +35,7 @@ public class CasesHistory {
     }
 
     public List<CasesResponse> getCasesBefore(int days) {
-        return Covid19API.reverseArrayToList(this.data.cases).subList(this.data.cases.length - days, this.data.cases.length);
+        return Arrays.asList(this.data.cases).subList(this.data.cases.length - days, this.data.cases.length);
     }
 
     public HistoryCasesResponse getCasesResponse() {

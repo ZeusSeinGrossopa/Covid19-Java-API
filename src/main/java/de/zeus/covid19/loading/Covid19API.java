@@ -92,7 +92,7 @@ public class Covid19API {
     }
 
     public static <T> List<T> reverseArrayToList(T[] array) {
-        List<T> list = Arrays.asList(array);
+        List<T> list = Arrays.asList(array.clone());
         Collections.reverse(list);
         return list;
     }
