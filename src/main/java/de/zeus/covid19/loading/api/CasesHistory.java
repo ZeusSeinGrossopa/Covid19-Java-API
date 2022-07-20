@@ -25,11 +25,11 @@ public class CasesHistory {
         this.data = this.countryData.getDataCollector().getCasesHistory();
     }
 
-    public CasesResponse getLatestCase() {
+    public CasesResponse getLatestCases() {
         return Covid19API.reverseArrayToList(this.data.cases).get(0);
     }
 
-    public CasesResponse getOldestCase() {
+    public CasesResponse getOldestCases() {
         return this.data.cases[0];
     }
 

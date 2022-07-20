@@ -32,8 +32,8 @@ Also, the API provides a simple prefabricated loading and store system.
 //Loading and storing the data 
 CountryData response = Covid19API.getCountry(CountryValue.GERMANY);
 
-String cases = response.getCasesHistory().getLatestCase().cases; 
-String date = response.getCasesHistory().getLatestCase().date;
+String cases = response.getCasesHistory().getLatestCases().cases; 
+String date = response.getCasesHistory().getLatestCases().date;
 
 //Refreshing certain data
 response.getDataCollector().refreshCaseHistory();
