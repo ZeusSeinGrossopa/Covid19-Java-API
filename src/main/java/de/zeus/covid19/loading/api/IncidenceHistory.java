@@ -1,7 +1,5 @@
 package de.zeus.covid19.loading.api;
 
-import de.zeus.covid19.api.country.history.cases.CasesResponse;
-import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
 import de.zeus.covid19.api.country.history.incidence.HistoryIncidenceResponse;
 import de.zeus.covid19.api.country.history.incidence.IncidenceResponse;
 import de.zeus.covid19.loading.CountryData;

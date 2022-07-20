@@ -5,7 +5,7 @@ import de.zeus.covid19.api.country.agegroups.AgeGroupsDataResponse;
 import de.zeus.covid19.api.country.history.cases.HistoryCasesResponse;
 import de.zeus.covid19.api.country.history.deaths.DeathResponse;
 import de.zeus.covid19.api.country.history.incidence.IncidenceResponse;
-import de.zeus.covid19.api.country.history.recovered.RecoveredHistory;
+import de.zeus.covid19.api.country.history.recovered.RecoveredResponse;
 
 public class CountryDataCollector {
 
@@ -16,7 +16,7 @@ public class CountryDataCollector {
     private HistoryCasesResponse caseHistory;
     private IncidenceResponse incidenceHistory;
     private DeathResponse deathResponse;
-    private RecoveredHistory recoveredHistory;
+    private RecoveredResponse recoveredHistory;
     private AgeGroupsDataResponse ageGroupsResponse;
 
     public CountryDataCollector(String country, boolean autoRefresh) {
@@ -87,11 +87,11 @@ public class CountryDataCollector {
         return this.deathResponse;
     }
 
-    public RecoveredHistory getRecoveredHistory() {
-        RecoveredHistory tempRecoveredHistory = null;
+    public RecoveredResponse getRecoveredHistory() {
+        RecoveredResponse tempRecoveredHistory = null;
 
         if(!autoRefresh || recoveredHistory == null)
-            tempRecoveredHistory =  Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredHistory.class);
+            tempRecoveredHistory =  Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredResponse.class);
 
         if(!autoRefresh)
             return tempRecoveredHistory;
