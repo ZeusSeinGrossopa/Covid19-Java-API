@@ -4,7 +4,7 @@ The Covid19-API is a useful REST API for getting an overview about the Covid-19 
 
 The data is stored in the API classes.
 
-- This API is based on the [COVID-19 API](https://corona-zahlen.org)
+- This API is based on the [COVID-19 API](https://corona-zahlen.org) by [Marlon Lückert](https://github.com/marlon360/rki-covid-api)
 - Make sure that the API is currently only variable for Germany
 
 ---
