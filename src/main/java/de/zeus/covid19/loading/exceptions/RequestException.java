@@ -1,4 +1,4 @@
-package de.zeus.covid19.http.exceptions;
+package de.zeus.covid19.loading.exceptions;
 
 public class RequestException extends RuntimeException {
     public RequestException(String message) {

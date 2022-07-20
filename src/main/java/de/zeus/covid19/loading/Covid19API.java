@@ -1,9 +1,9 @@
-package de.zeus.covid19.http;
+package de.zeus.covid19.loading;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
-import de.zeus.covid19.http.exceptions.RequestException;
+import de.zeus.covid19.loading.exceptions.RequestException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -11,14 +11,29 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Covid19API {
 
     public static final String COVID_19_API_URL = "https://api.corona-zahlen.org/";
     private static final Gson gson = new Gson();
 
+    public static CountryDataCollector getCountryData(String country) {
+        return new CountryDataCollector(country);
+    }
+
+    public static CountryDataCollector getCountryData(CountryValue country) {
+        return getCountryData(country.getCountry());
+    }
+
+    public static CountryData getCountry(CountryValue country) {
+        return getCountry(country.getCountry());
+    }
+
     public static CountryData getCountry(String country) {
-        return new CountryData(country);
+        return new CountryData(getCountryData(country));
     }
 
     public static <T> T getObject(String url, Class<T> clazz) throws RequestException {
@@ -74,5 +89,11 @@ public class Covid19API {
         } catch (Exception e) {
             throw new RequestException(e);
         }
+    }
+
+    public static <T> List<T> reverseArrayToList(T[] array) {
+        List<T> list = Arrays.asList(array);
+        Collections.reverse(list);
+        return list;
     }
 }
