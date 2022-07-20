@@ -21,8 +21,8 @@ Note: The API based on the [COVID-19 API](https://corona-zahlen.org) by [Marlon 
 To achive a better handling the API is expanded with a new simple prefabricated loading and store system.
 Additional functions: 
 - Adjustable timeslots to collect data
-- Summarized data for Germany availible (Incidence, Deaths, Recovered, Cases, age-groups)
-- Better performance because of collectin dedicated data 
+- Summarized data for Germany availible (incidence, deaths, recovered, cases, age-groups)
+- Improved performance because of collectin dedicated data 
 - Simple information classes provided for use in JAVA 
 
 ### How to use
