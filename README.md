@@ -1,4 +1,4 @@
-_# Covid19-Java-Api
+# Covid19-Java-Api
 
 The Covid19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
 
