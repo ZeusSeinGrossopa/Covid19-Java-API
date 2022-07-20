@@ -1,9 +1,14 @@
 package de.zeus.covid19.loading;
 
+/**
+ * Default set of countries to load.
+ *
+ * @author ZeusSeinGrossopa
+ * @version 1.0
+ */
 public enum CountryValue {
 
     GERMANY("germany"),
-
     ;
 
     private final String country;
