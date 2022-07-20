@@ -22,7 +22,7 @@ To achive a better handling the API is expanded with a new simple prefabricated 
 Additional functions: 
 - Adjustable timeslots to collect data
 - Summarized data for Germany available (incidence, deaths, recovered, cases, age-groups)
-- Improved performance because of collectin dedicated data 
+- Improved performance because of collect only dedicated data 
 - Simple information classes provided for use in JAVA 
 
 ### How to use
