@@ -1,4 +1,4 @@
-# Covid19-Java-Api
+_# Covid19-Java-Api
 
 The Covid19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
 
@@ -43,4 +43,31 @@ See in
 the [CountryData](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/blob/master/src/main/java/de/zeus/covid19/loading/CountryData.java)
 class for the different data usages
 
+---
+
+## Use the API
+
+#### Maven
+```xml
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+
+<dependency>
+    <groupId>com.github.ZeusSeinGrossopa</groupId>
+    <artifactId>Covid19-Java-API</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+#### Gradle
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.ZeusSeinGrossopa:Covid19-Java-API:1.0'
+}
+```
 ---
