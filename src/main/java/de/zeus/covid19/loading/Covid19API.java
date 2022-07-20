@@ -82,9 +82,9 @@ public class Covid19API {
      * Gets an instance of a defined class object by URL. This process is done by the GSON library.
      * The URL must contain a json file.
      *
-     * @param url the url to load the data from
+     * @param url   the url to load the data from
      * @param clazz the class to load the data into
-     * @param <T> the type of the class
+     * @param <T>   the type of the class
      * @return an instance of the class with the loaded values
      * @throws RequestException if the request failed
      */
@@ -104,7 +104,7 @@ public class Covid19API {
      * @param url the url to load Json from
      * @return the json as string
      * @throws RequestException if the request failed
-     * @throws IOException if input stream could not be read
+     * @throws IOException      if input stream could not be read
      */
     private static String getJson(String url) throws RequestException, IOException {
         InputStream inputStream = getInputStream(url);
@@ -162,8 +162,8 @@ public class Covid19API {
      * Turning array into list and reversing the list.
      *
      * @param array the array to reverse it
+     * @param <T>   the type of the array
      * @return the reversed list
-     * @param <T> the type of the array
      */
     public static <T> List<T> reverseArrayToList(T[] array) {
         List<T> list = Arrays.asList(array.clone());

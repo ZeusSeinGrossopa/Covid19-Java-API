@@ -8,7 +8,7 @@ import de.zeus.covid19.loading.api.RecoveredHistory;
 /**
  * Data class for a country.
  * This class is only for the API features. The API is using the {@link CountryDataCollector} for get and manage the data.
- *
+ * <p>
  * Get the instance of the class in the {@link Covid19API#getCountry(String)}} method.
  *
  * @author ZeusSeinGrossopa

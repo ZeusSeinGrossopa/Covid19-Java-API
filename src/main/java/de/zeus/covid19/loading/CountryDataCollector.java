@@ -26,7 +26,7 @@ public class CountryDataCollector {
     private AgeGroupsDataResponse ageGroupsResponse;
 
     /**
-     * @param country The country to load.
+     * @param country     The country to load.
      * @param autoRefresh if true the data will be refreshed automatically. See {@link #setAutoRefresh(boolean)}
      */
     public CountryDataCollector(String country, boolean autoRefresh) {
@@ -47,10 +47,10 @@ public class CountryDataCollector {
      */
     public CountryResponse getResponse() {
         CountryResponse tempResponse = null;
-        if(!autoRefresh || this.response == null)
+        if (!autoRefresh || this.response == null)
             tempResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, CountryResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return tempResponse;
 
         if (this.response == null) {
@@ -66,10 +66,10 @@ public class CountryDataCollector {
     public HistoryCasesResponse getCasesHistory() {
         HistoryCasesResponse tempCaseHistory = null;
 
-        if(!autoRefresh || this.caseHistory == null)
+        if (!autoRefresh || this.caseHistory == null)
             tempCaseHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/cases/", HistoryCasesResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return tempCaseHistory;
 
         if (this.caseHistory == null) {
@@ -85,10 +85,10 @@ public class CountryDataCollector {
     public IncidenceResponse getIncidenceHistory() {
         IncidenceResponse tempIncidenceHistory = null;
 
-        if(!autoRefresh ||  this.incidenceHistory == null)
+        if (!autoRefresh || this.incidenceHistory == null)
             tempIncidenceHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/incidence/", IncidenceResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return tempIncidenceHistory;
 
         if (this.incidenceHistory == null) {
@@ -104,10 +104,10 @@ public class CountryDataCollector {
     public DeathResponse getDeathsHistory() {
         DeathResponse tempDeathsHistory = null;
 
-        if(!autoRefresh || this.deathResponse == null)
+        if (!autoRefresh || this.deathResponse == null)
             tempDeathsHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/deaths/", DeathResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return tempDeathsHistory;
 
         if (this.deathResponse == null) {
@@ -123,10 +123,10 @@ public class CountryDataCollector {
     public RecoveredResponse getRecoveredHistory() {
         RecoveredResponse tempRecoveredHistory = null;
 
-        if(!autoRefresh || recoveredHistory == null)
-            tempRecoveredHistory =  Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredResponse.class);
+        if (!autoRefresh || recoveredHistory == null)
+            tempRecoveredHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return tempRecoveredHistory;
 
         if (this.recoveredHistory == null) {
@@ -142,10 +142,10 @@ public class CountryDataCollector {
     public AgeGroupsDataResponse getAgeGroupsResponse() {
         AgeGroupsDataResponse tempAgeGroupsResponse = null;
 
-        if(!autoRefresh || this.ageGroupsResponse == null)
+        if (!autoRefresh || this.ageGroupsResponse == null)
             tempAgeGroupsResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/age-groups/", AgeGroupsDataResponse.class);
 
-        if(!autoRefresh)
+        if (!autoRefresh)
             return Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/age-groups/", AgeGroupsDataResponse.class);
 
         if (this.ageGroupsResponse == null) {
@@ -166,7 +166,7 @@ public class CountryDataCollector {
 
     /**
      * Resetting the stored data. This is used when the data is outdated.
-     *
+     * <p>
      * The data gets loaded when the method for the data gets called.
      */
     public final void refresh() {
@@ -229,18 +229,18 @@ public class CountryDataCollector {
     /**
      * If false the data will be every time gets refreshed when the method for the data gets called.
      *
-     * @param autoRefresh if true, the data will be refreshed automatically.
+     * @return if the data is automatically refreshed.
      */
-    public void setAutoRefresh(boolean autoRefresh) {
-        this.autoRefresh = autoRefresh;
+    public boolean isAutoRefresh() {
+        return autoRefresh;
     }
 
     /**
      * If false the data will be every time gets refreshed when the method for the data gets called.
      *
-     * @return if the data is automatically refreshed.
+     * @param autoRefresh if true, the data will be refreshed automatically.
      */
-    public boolean isAutoRefresh() {
-        return autoRefresh;
+    public void setAutoRefresh(boolean autoRefresh) {
+        this.autoRefresh = autoRefresh;
     }
 }
