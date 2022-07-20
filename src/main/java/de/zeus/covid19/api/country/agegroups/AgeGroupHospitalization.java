@@ -1,8 +1,8 @@
-package de.zeus.covid19.api.country.data;
+package de.zeus.covid19.api.country.agegroups;
 
 import com.google.gson.annotations.SerializedName;
 
-public class HospitalizationResponse {
+public class AgeGroupHospitalization {
 
     @SerializedName("cases7Days")
     public String cases7Days;
@@ -13,6 +13,4 @@ public class HospitalizationResponse {
     @SerializedName("date")
     public String date;
 
-    @SerializedName("lastUpdate")
-    public String lastUpdate;
 }

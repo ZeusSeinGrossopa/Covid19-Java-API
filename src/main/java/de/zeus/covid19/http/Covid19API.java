@@ -23,7 +23,7 @@ public class Covid19API {
         try {
             return gson.fromJson(getJson(url), clazz);
         } catch(JsonSyntaxException e) {
-            throw new JsonParseException("Could not parse JSON information.", e);
+            throw new JsonParseException("Could not parse JSON information. (url: " + url + " Class: " + clazz.getSimpleName() + ")", e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
