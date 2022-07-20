@@ -35,13 +35,9 @@ CountryData response = Covid19API.getCountry(CountryValue.GERMANY);
 String cases = response.getCasesHistory().getLatestCases().cases; 
 String date = response.getCasesHistory().getLatestCases().date;
 
-//Refreshing certain data
+//Refreshing certain data values
 response.getDataCollector().refreshCaseHistory();
 ```
-
-See in
-the [CountryData](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/blob/master/src/main/java/de/zeus/covid19/loading/CountryData.java)
-class for the different data usages
 
 ---
 
