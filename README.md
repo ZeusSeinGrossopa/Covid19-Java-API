@@ -1,16 +1,10 @@
 # Covid19-Java-Api
 
+### General information
 The Covid19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
+The data are stored in different API classes.
 
-The data is stored in the API classes.
-
-- This API is based on the [COVID-19 API](https://corona-zahlen.org)
-  by [Marlon Lückert](https://github.com/marlon360/rki-covid-api)
-- Make sure that the API is currently only variable for Germany
-
----
-
-## How it works
+### How it works
 
 The API works with the [Gson](https://github.com/google/gson) library to collect the information with a simple data
 class. The exact data structure of the [COVID-19 API](https://corona-zahlen.org) is provided in the
@@ -18,16 +12,20 @@ API [package](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/tree/master/s
 
 You can store and collect the data in the classes.
 
+Note: The API based on the [COVID-19 API](https://corona-zahlen.org) by [Marlon Lückert](https://github.com/marlon360/rki-covid-api). (This API is only available for Germany). Based on this API additional functions are added. 
+
 ---
 
-### Prefabricated data load and store system
+## Additional implemented functions 
 
-Also, the API provides a simple prefabricated loading and store system.
+To achive a better handling the API is expanded with a new simple prefabricated loading and store system.
+Additional functions: 
+- Adjustable timeslots to collect data
+- Summarized data for Germany availible (Incidence, Deaths, Recovered, Cases, age-groups)
+- Better performance because of collectin dedicated data 
+- Simple information classes provided for use in JAVA 
 
-- The concept of easy to use and simple.
-- Performance is not a problem.
-- Use more variations to get the data you need.
-
+### How to use
 #### Load and store information
 
 ```
@@ -43,7 +41,7 @@ response.getDataCollector().refreshCaseHistory();
 
 ---
 
-## Use the API
+## Implement the API
 
 #### Maven
 
