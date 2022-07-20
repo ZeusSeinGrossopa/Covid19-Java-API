@@ -7,7 +7,7 @@ import de.zeus.covid19.api.country.history.cases.CasesResponse;
 public class DeathResponse {
 
     @SerializedName("data")
-    public CasesResponse[] deaths;
+    public HistoryDeathResponse[] deaths;
 
     @SerializedName("meta")
     public MetaResponse meta;
