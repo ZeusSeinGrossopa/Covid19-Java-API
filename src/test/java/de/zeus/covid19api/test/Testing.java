@@ -8,7 +8,6 @@ public class Testing {
     public static void main(String[] args) {
         CountryData response = Covid19API.getCountry("germany");
 
-        System.out.println(response.getResponse().deaths);
+        System.out.println(response.getAgeGroupsResponse().data.A15A34.casesFemale);
     }
-
 }

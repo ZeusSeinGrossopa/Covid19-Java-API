@@ -9,58 +9,55 @@ import de.zeus.covid19.api.country.history.recovered.RecoveredHistory;
 
 public class CountryData {
 
+    private final String country;
     private CountryResponse response;
-
     private HistoryCasesResponse caseHistory;
     private IncidenceResponse incidenceHistory;
     private DeathResponse deathResponse;
     private RecoveredHistory recoveredHistory;
-
     private AgeGroupsDataResponse ageGroupsResponse;
-
-    private final String country;
 
     public CountryData(String country) {
         this.country = country;
     }
 
     public CountryResponse getResponse() {
-        if(response == null) {
+        if (response == null) {
             return (response = Covid19API.getObject(Covid19API.COVID_19_API_URL + country, CountryResponse.class));
         }
         return response;
     }
 
     public HistoryCasesResponse getCasesHistory() {
-        if(caseHistory == null) {
+        if (caseHistory == null) {
             return (caseHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/cases/", HistoryCasesResponse.class));
         }
         return caseHistory;
     }
 
     public IncidenceResponse getIncidenceHistory() {
-        if(incidenceHistory == null) {
+        if (incidenceHistory == null) {
             return (incidenceHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/incidence/", IncidenceResponse.class));
         }
         return incidenceHistory;
     }
 
     public DeathResponse getDeathsHistory() {
-        if(deathResponse == null) {
+        if (deathResponse == null) {
             return (deathResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/deaths/", DeathResponse.class));
         }
         return deathResponse;
     }
 
     public RecoveredHistory getRecoveredHistory() {
-        if(recoveredHistory == null) {
+        if (recoveredHistory == null) {
             return (recoveredHistory = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/history/recovered/", RecoveredHistory.class));
         }
         return recoveredHistory;
     }
 
     public AgeGroupsDataResponse getAgeGroupsResponse() {
-        if(ageGroupsResponse == null) {
+        if (ageGroupsResponse == null) {
             return (ageGroupsResponse = Covid19API.getObject(Covid19API.COVID_19_API_URL + country + "/age-groups/", AgeGroupsDataResponse.class));
         }
         return ageGroupsResponse;

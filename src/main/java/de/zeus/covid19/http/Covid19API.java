@@ -5,7 +5,9 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import de.zeus.covid19.http.exceptions.RequestException;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -22,7 +24,7 @@ public class Covid19API {
     public static <T> T getObject(String url, Class<T> clazz) throws RequestException {
         try {
             return gson.fromJson(getJson(url), clazz);
-        } catch(JsonSyntaxException e) {
+        } catch (JsonSyntaxException e) {
             throw new JsonParseException("Could not parse JSON information. (url: " + url + " Class: " + clazz.getSimpleName() + ")", e);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -44,7 +46,7 @@ public class Covid19API {
         }
 
         String json = output.toString(StandardCharsets.UTF_8);
-        if(json.toLowerCase().startsWith("Cannot get".toLowerCase()))
+        if (json.toLowerCase().startsWith("Cannot get".toLowerCase()))
             throw new RequestException("Failed to get data from " + url + ". URL returned: " + json);
 
         return json;
@@ -65,11 +67,11 @@ public class Covid19API {
 
             int responseCode = connection.getResponseCode();
 
-            if(responseCode == HttpURLConnection.HTTP_OK) {
+            if (responseCode == HttpURLConnection.HTTP_OK) {
                 return connection.getInputStream();
             }
             throw new RequestException("Request failed for url (" + url + "): Response Code: " + responseCode);
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RequestException(e);
         }
     }
