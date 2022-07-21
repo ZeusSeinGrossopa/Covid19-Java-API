@@ -18,7 +18,7 @@ Note: The API based on the [COVID-19 API](https://corona-zahlen.org) by [Marlon 
 
 ## Additional implemented functions 
 
-To achive a better handling the API is expanded with a new simple prefabricated loading and store system.
+To achieve a better handling the API is expanded with a new simple prefabricated loading and store system.
 Additional functions: 
 - Adjustable timeslots to collect data
 - Summarized data for Germany available (incidence, deaths, recovered, cases, age-groups)
