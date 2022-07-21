@@ -25,6 +25,8 @@ public class Covid19API {
 
     /**
      * The base URL of the API.
+     *
+     * @see <a href="https://api.corona-zahlen.org/">https://api.corona-zahlen.org/</a>
      */
     public static final String COVID_19_API_URL = "https://api.corona-zahlen.org/";
     private static final Gson gson = new Gson();
