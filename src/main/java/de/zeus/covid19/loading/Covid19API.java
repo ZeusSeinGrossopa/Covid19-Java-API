@@ -33,7 +33,7 @@ public class Covid19API {
 
     /**
      * Creating an instance of a {@link CountryDataCollector} object. The {@link CountryDataCollector} is a raw data collector. It does not contain any other features.
-     * To use other features look to the {@link #getCountry(String)} method.
+     * To use other features, look to the {@link #getCountry(String)} method.
      *
      * @param country the country to load the data for
      * @return an instance of the data collector to use the data
@@ -45,7 +45,7 @@ public class Covid19API {
 
     /**
      * Creating an instance of a {@link CountryDataCollector} object. The {@link CountryDataCollector} is a raw data collector. It does not contain any other features.
-     * To use other features look to the {@link #getCountry(CountryValue)} method.
+     * To use other features, look to the {@link #getCountry(CountryValue)} method.
      * This method is used for default registered country of the {@link CountryValue} class.
      *
      * @param country the country to load the data for
@@ -151,9 +151,9 @@ public class Covid19API {
 
             int responseCode = connection.getResponseCode();
 
-            if (responseCode == HttpURLConnection.HTTP_OK) {
+            if (responseCode == HttpURLConnection.HTTP_OK)
                 return connection.getInputStream();
-            }
+
             throw new RequestException("Request failed for url (" + url + "): Response Code: " + responseCode);
         } catch (Exception e) {
             throw new RequestException(e);
@@ -161,7 +161,7 @@ public class Covid19API {
     }
 
     /**
-     * Turning array into list and reversing the list.
+     * Turning an array into a list and reversing the list.
      *
      * @param array the array to reverse it
      * @param <T>   the type of the array

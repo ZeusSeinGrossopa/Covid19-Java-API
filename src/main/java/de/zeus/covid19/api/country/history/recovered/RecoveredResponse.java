@@ -10,5 +10,4 @@ public class RecoveredResponse {
 
     @SerializedName("meta")
     public MetaResponse meta;
-
 }

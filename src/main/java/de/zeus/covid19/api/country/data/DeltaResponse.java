@@ -6,8 +6,10 @@ public class DeltaResponse {
 
     @SerializedName("cases")
     public String cases;
+
     @SerializedName("deaths")
     public String deaths;
+
     @SerializedName("recovered")
     public String recovered;
 }

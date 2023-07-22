@@ -1,7 +1,8 @@
 # Covid19-Java-Api
 
 ### General information
-The Covid19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
+
+The Covid-19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
 The data are stored in different API classes.
 
 ### How it works
@@ -12,20 +13,24 @@ API [package](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/tree/master/s
 
 You can store and collect the data in the classes.
 
-Note: The API based on the [COVID-19 API](https://corona-zahlen.org) by [Marlon Lückert](https://github.com/marlon360/rki-covid-api). (This API is only available for Germany). Based on this API additional functions are added. 
+Note: The API based on the [COVID-19 API](https://corona-zahlen.org)
+by [Marlon Lückert](https://github.com/marlon360/rki-covid-api). (This API is only available for Germany). Based on this
+ API, additional functions are added.
 
 ---
 
-## Additional implemented functions 
+## Additional implemented functions
 
-To achieve a better handling the API is expanded with a new simple prefabricated loading and store system.
-Additional functions: 
+To achieve better handling, the API is expanded with a new simple prefabricated loading and store system.
+Additional functions:
+
 - Adjustable timeslots to collect data
-- Summarized data for Germany available (incidence, deaths, recovered, cases, age-groups)
-- Improved performance because of collect only dedicated data 
-- Simple information classes provided for use in JAVA 
+- Summarized data for Germany available (incidence, deaths, recovered, cases, age-groups, ...)
+- Improved performance because of collecting only dedicated data
+- Simple information classes provided for use in JAVA
 
 ### How to use
+
 #### Load and store information
 
 ```

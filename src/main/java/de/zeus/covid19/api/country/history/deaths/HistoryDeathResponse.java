@@ -6,6 +6,7 @@ public class HistoryDeathResponse {
 
     @SerializedName("deaths")
     public String deaths;
+
     @SerializedName("date")
     public String date;
 }

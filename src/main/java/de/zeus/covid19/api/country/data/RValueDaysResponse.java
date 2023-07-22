@@ -6,6 +6,7 @@ public class RValueDaysResponse {
 
     @SerializedName("value")
     public String value;
+
     @SerializedName("date")
     public String date;
 }

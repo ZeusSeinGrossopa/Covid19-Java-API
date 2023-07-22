@@ -10,14 +10,19 @@ public class CountryResponse {
 
     @SerializedName("cases")
     public String cases;
+
     @SerializedName("deaths")
     public String deaths;
+
     @SerializedName("recovered")
     public String recovered;
+
     @SerializedName("weekIncidence")
     public String weekIncidence;
+
     @SerializedName("casesPer100k")
     public String casesPer100k;
+
     @SerializedName("casesPerWeek")
     public String casesPerWeek;
 

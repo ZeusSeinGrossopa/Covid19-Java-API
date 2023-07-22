@@ -9,5 +9,4 @@ public class HistoryRecoveredResponse {
 
     @SerializedName("date")
     public String date;
-
 }

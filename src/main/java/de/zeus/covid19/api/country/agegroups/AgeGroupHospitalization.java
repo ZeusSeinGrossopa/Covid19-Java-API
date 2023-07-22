@@ -12,5 +12,4 @@ public class AgeGroupHospitalization {
 
     @SerializedName("date")
     public String date;
-
 }
