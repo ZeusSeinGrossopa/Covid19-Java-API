@@ -1,4 +1,5 @@
 # Covid19-Java-Api
+[![](https://jitpack.io/v/ZeusSeinGrossopa/Covid19-Java-API.svg)](https://jitpack.io/#ZeusSeinGrossopa/Covid19-Java-API)
 
 ### General information
 
