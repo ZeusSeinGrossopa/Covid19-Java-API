@@ -32,7 +32,6 @@ public class RecoveredHistory {
      */
     public void refresh() {
         this.countryData.getDataCollector().refreshRecoveredHistory();
-
         this.data = this.countryData.getDataCollector().getRecoveredHistory();
     }
 

@@ -31,7 +31,6 @@ public class IncidenceHistory {
      */
     public void refresh() {
         this.countryData.getDataCollector().refreshDeathsHistory();
-
         this.data = this.countryData.getDataCollector().getIncidenceHistory();
     }
 

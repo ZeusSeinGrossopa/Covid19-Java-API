@@ -31,7 +31,6 @@ public class CasesHistory {
      */
     public void refresh() {
         this.countryData.getDataCollector().refreshCaseHistory();
-
         this.data = this.countryData.getDataCollector().getCasesHistory();
     }
 

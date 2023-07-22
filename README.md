@@ -4,15 +4,14 @@
 
 ### General information
 
-The Covid-19-API is a useful REST API for getting an overview about the Covid-19 cases and other information.
-The data are stored in different API classes.
+The Covid-19-API is a useful API for getting an overview about the Covid-19 cases and other information.
+The data is stored in different java classes.
 
 ### How it works
 
 The API works with the [Gson](https://github.com/google/gson) library to collect the information with a simple data
 class. The exact data structure of the [COVID-19 API](https://corona-zahlen.org) is provided in the
-API [package](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/tree/master/src/main/java/de/zeus/covid19/api)
-
+API [package](https://github.com/ZeusSeinGrossopa/Covid19-Java-API/tree/master/src/main/java/de/zeus/covid19/api).
 You can store and collect the data in the classes.
 
 Note: The API based on the [COVID-19 API](https://corona-zahlen.org)
@@ -29,21 +28,21 @@ Additional functions:
 - Adjustable timeslots to collect data
 - Summarized data for Germany available (incidence, deaths, recovered, cases, age-groups, ...)
 - Improved performance because of collecting only dedicated data
-- Simple information classes provided for use in JAVA
+- Simple information classes provided for use in java
 
 ### How to use
 
 #### Load and store information
 
 ```
-//Loading and storing the data 
-CountryData response = Covid19API.getCountry(CountryValue.GERMANY);
+//Loading and storing the data as a variable
+CountryData countryData = Covid19API.getCountry(CountryValue.GERMANY);
 
-String cases = response.getCasesHistory().getLatestCases().cases; 
-String date = response.getCasesHistory().getLatestCases().date;
+String cases = countryData.getCasesHistory().getLatestCases().cases; 
+String date = countryData.getCasesHistory().getLatestCases().date;
 
-//Refreshing certain data values
-response.getDataCollector().refreshCaseHistory();
+//Refreshing certain stored data values
+countryData.getDataCollector().refreshCaseHistory();
 ```
 
 ---
@@ -60,9 +59,9 @@ response.getDataCollector().refreshCaseHistory();
 </repository>
 
 <dependency>
-<groupId>com.github.ZeusSeinGrossopa</groupId>
-<artifactId>Covid19-Java-API</artifactId>
-<version>1.0</version>
+    <groupId>com.github.ZeusSeinGrossopa</groupId>
+    <artifactId>Covid19-Java-API</artifactId>
+    <version>1.0</version>
 </dependency>
 ```
 
