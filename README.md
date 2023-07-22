@@ -1,4 +1,5 @@
 # Covid19-Java-Api
+
 [![](https://jitpack.io/v/ZeusSeinGrossopa/Covid19-Java-API.svg)](https://jitpack.io/#ZeusSeinGrossopa/Covid19-Java-API)
 
 ### General information
@@ -16,7 +17,7 @@ You can store and collect the data in the classes.
 
 Note: The API based on the [COVID-19 API](https://corona-zahlen.org)
 by [Marlon Lückert](https://github.com/marlon360/rki-covid-api). (This API is only available for Germany). Based on this
- API, additional functions are added.
+API, additional functions are added.
 
 ---
 
@@ -52,15 +53,16 @@ response.getDataCollector().refreshCaseHistory();
 #### Maven
 
 ```xml
+
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
 </repository>
 
 <dependency>
-    <groupId>com.github.ZeusSeinGrossopa</groupId>
-    <artifactId>Covid19-Java-API</artifactId>
-    <version>1.0</version>
+<groupId>com.github.ZeusSeinGrossopa</groupId>
+<artifactId>Covid19-Java-API</artifactId>
+<version>1.0</version>
 </dependency>
 ```
 
